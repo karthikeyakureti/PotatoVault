@@ -1,6 +1,6 @@
 ﻿import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Instagram, ExternalLink, Compass, ShieldCheck, Anchor, Waves, Ship } from 'lucide-react';
+import { ChevronDown, Instagram, ExternalLink, Compass, ShieldCheck, Anchor, Ship } from 'lucide-react';
 import { MEMORIES, MemoryItem } from '../data/memories';
 import mem10 from '../../images/memory10.jpg';
 import mem11 from '../../images/memory11.jpg';
@@ -16,6 +16,7 @@ export const ScrollStoryHero: React.FC<ScrollStoryHeroProps> = ({ onOpenLightbox
 
   const mem10Item = MEMORIES.find((m) => m.id === 'mem-10') || MEMORIES[0];
   const mem11Item = MEMORIES.find((m) => m.id === 'mem-11') || MEMORIES[1];
+  const instagramUrl = 'https://www.instagram.com/_kalyan_setty_?stkn=MXZ1OXVjaWVzbHNnNw==';
 
   return (
     <section
@@ -65,14 +66,16 @@ export const ScrollStoryHero: React.FC<ScrollStoryHeroProps> = ({ onOpenLightbox
           {/* CTA & Instagram Connect Buttons */}
           <div className="flex flex-wrap items-center gap-4 mb-10 w-full sm:w-auto">
             {/* Instagram Primary Button */}
-            <button
-              onClick={onOpenInstagram}
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white font-semibold text-sm shadow-[0_0_25px_rgba(253,29,29,0.35)] hover:shadow-[0_0_35px_rgba(253,29,29,0.55)] hover:scale-105 active:scale-95 transition-all duration-300 group"
             >
               <Instagram className="w-4 h-4 transition-transform group-hover:rotate-12" />
-              <span>Connect on Instagram</span>
+              <span>@_kalyan_setty_</span>
               <ExternalLink className="w-3.5 h-3.5 opacity-80" />
-            </button>
+            </a>
 
             {/* Explore Memories Button */}
             <a
@@ -92,8 +95,8 @@ export const ScrollStoryHero: React.FC<ScrollStoryHeroProps> = ({ onOpenLightbox
               <p className="text-xs font-mono text-ocean-400 uppercase tracking-wider mt-0.5">Voyages</p>
             </div>
             <div>
-              <p className="text-2xl font-serif font-black text-white">12</p>
-              <p className="text-xs font-mono text-rose-400 uppercase tracking-wider mt-0.5">Core Chapters</p>
+              <p className="text-2xl font-serif font-black text-white">11</p>
+              <p className="text-xs font-mono text-rose-400 uppercase tracking-wider mt-0.5">Chapters</p>
             </div>
             <div>
               <p className="text-2xl font-serif font-black text-white">⚓</p>

@@ -12,14 +12,17 @@ interface InstagramModalProps {
 export const InstagramModal: React.FC<InstagramModalProps> = ({
   isOpen,
   onClose,
-  defaultHandle = 'srinivasa_kalyan',
+  defaultHandle = '_kalyan_setty_',
 }) => {
   const [handle, setHandle] = useState(defaultHandle);
   const [copied, setCopied] = useState(false);
 
   if (!isOpen) return null;
 
-  const instagramUrl = `https://www.instagram.com/${handle.replace('@', '')}`;
+  const instagramUrl =
+    handle.trim() === '_kalyan_setty_'
+      ? 'https://www.instagram.com/_kalyan_setty_?stkn=MXZ1OXVjaWVzbHNnNw=='
+      : `https://www.instagram.com/${handle.replace('@', '')}`;
 
   const copyLink = () => {
     navigator.clipboard.writeText(instagramUrl);
@@ -80,7 +83,7 @@ export const InstagramModal: React.FC<InstagramModalProps> = ({
               <h4 className="text-base font-bold text-white">Srinivasa Kalyan</h4>
               <ShieldCheck className="w-4 h-4 text-ocean-400 fill-ocean-400/20" />
             </div>
-            <p className="text-xs font-mono text-neutral-400 mt-0.5">@{handle.replace('@', '')}</p>
+            <p className="text-xs font-mono text-ocean-400 font-medium mt-0.5">@{handle.replace('@', '')}</p>
 
             <p className="text-xs text-neutral-300 font-light mt-2 max-w-xs leading-relaxed">
               ⚓ Merchant Navy Officer 🚢 • Navigating High Seas & Boundless Horizons • Kalyan / 'Potato' to his brothers • World Voyager
@@ -88,7 +91,7 @@ export const InstagramModal: React.FC<InstagramModalProps> = ({
 
             <div className="flex items-center justify-center gap-6 mt-4 pt-3 border-t border-white/10 w-full text-center">
               <div>
-                <span className="text-sm font-bold text-white block">12</span>
+                <span className="text-sm font-bold text-white block">11</span>
                 <span className="text-[10px] font-mono text-neutral-400 uppercase">Memories</span>
               </div>
               <div>
@@ -104,7 +107,7 @@ export const InstagramModal: React.FC<InstagramModalProps> = ({
 
           <div className="mb-6">
             <label className="text-[11px] font-mono text-neutral-400 block mb-1.5">
-              Enter or update Kalyan's Instagram username:
+              Kalyan's Instagram profile:
             </label>
             <div className="flex items-center rounded-xl bg-vault-900 border border-white/10 px-3 py-2 text-xs">
               <span className="text-neutral-500 font-mono mr-1">instagram.com/</span>
@@ -112,7 +115,7 @@ export const InstagramModal: React.FC<InstagramModalProps> = ({
                 type="text"
                 value={handle}
                 onChange={(e) => setHandle(e.target.value)}
-                placeholder="username"
+                placeholder="_kalyan_setty_"
                 className="bg-transparent flex-1 text-white focus:outline-none font-mono"
               />
             </div>

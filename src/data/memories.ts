@@ -6,7 +6,6 @@ import mem3 from '../../images/memory3.jpg';
 import mem4 from '../../images/memory4.jpg';
 import mem5 from '../../images/memory5.jpg';
 import mem6 from '../../images/memory6.jpg';
-import mem7 from '../../images/memory7.jpg';
 import mem8 from '../../images/memory8.jpg';
 import mem9 from '../../images/memory9.jpg';
 import mem10 from '../../images/memory10.jpg';
@@ -131,26 +130,17 @@ export const MEMORIES: MemoryItem[] = [
   {
     id: 'mem-08',
     number: '#08',
-    title: 'Sunset on Land',
-    caption: 'Watching golden sunsets from the shore, waiting for the brother to sign off and return home.',
-    date: 'Golden Hours',
-    image: mem7,
-    tag: 'Vibes',
-  },
-  {
-    id: 'mem-09',
-    number: '#09',
     title: 'Living Every Second',
-    caption: 'Time moves differently when your brother is only home for a few weeks. You cherish every second.',
+    caption: 'Time moves differently when your brother is home on leave. You cherish every second of freedom and laughter.',
     date: 'Cherished Times',
     image: mem8,
     tag: 'Moments',
   },
   {
-    id: 'mem-12',
-    number: '#12',
+    id: 'mem-09',
+    number: '#09',
     title: 'Anchored Across Oceans',
-    caption: 'Proof that real friendship defies continents, time zones, and maritime miles.',
+    caption: 'Proof that real friendship defies continents, time zones, and nautical miles.',
     date: 'Timeless',
     image: mem9,
     tag: 'Legend',

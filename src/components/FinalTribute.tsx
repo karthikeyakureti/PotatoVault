@@ -1,6 +1,6 @@
 ﻿import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Heart, Sparkles, ArrowUp, Instagram, ExternalLink, Anchor } from 'lucide-react';
+import { Heart, ArrowUp, Instagram, ExternalLink, Anchor } from 'lucide-react';
 import { MEMORIES } from '../data/memories';
 
 interface FinalTributeProps {
@@ -20,6 +20,8 @@ export const FinalTribute: React.FC<FinalTributeProps> = ({ onOpenInstagram }) =
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const instagramUrl = 'https://www.instagram.com/_kalyan_setty_?stkn=MXZ1OXVjaWVzbHNnNw==';
 
   return (
     <section
@@ -72,7 +74,7 @@ export const FinalTribute: React.FC<FinalTributeProps> = ({ onOpenInstagram }) =
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill border border-ocean-400/30 text-ocean-400 text-xs font-mono tracking-widest uppercase mb-6 shadow-[0_0_20px_rgba(56,189,248,0.2)]"
         >
           <Anchor className="w-3.5 h-3.5" />
-          <span>The Legacy of Kalyan</span>
+          <span>Merchant Navy Legacy</span>
         </motion.div>
 
         <motion.p
@@ -99,7 +101,7 @@ export const FinalTribute: React.FC<FinalTributeProps> = ({ onOpenInstagram }) =
 
           <div className="mt-4 inline-flex items-center gap-2 px-5 py-1.5 rounded-full bg-ocean-500/10 border border-ocean-400/30 backdrop-blur-md shadow-[0_0_35px_rgba(14,165,233,0.25)]">
             <span className="text-xs sm:text-sm font-mono tracking-widest text-ocean-300 uppercase">
-              Brother • Voyager • Friend
+              Merchant Navy Officer • Brother • Friend
             </span>
           </div>
         </motion.div>
@@ -129,18 +131,30 @@ export const FinalTribute: React.FC<FinalTributeProps> = ({ onOpenInstagram }) =
               <Instagram className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-xs font-mono text-neutral-400">Share or connect</p>
-              <p className="text-sm font-bold text-white">@srinivasa_kalyan</p>
+              <p className="text-xs font-mono text-neutral-400">Follow Kalyan on Instagram</p>
+              <p className="text-sm font-bold text-white">@_kalyan_setty_</p>
             </div>
           </div>
 
-          <button
-            onClick={onOpenInstagram}
-            className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white text-xs font-bold hover:brightness-110 active:scale-95 transition-all shadow-md flex items-center gap-1.5"
-          >
-            <span>Visit Instagram</span>
-            <ExternalLink className="w-3.5 h-3.5" />
-          </button>
+          <div className="flex items-center gap-2">
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white text-xs font-bold hover:brightness-110 active:scale-95 transition-all shadow-md flex items-center gap-1.5"
+            >
+              <span>Visit</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+
+            <button
+              onClick={onOpenInstagram}
+              className="px-3 py-2 rounded-xl glass-panel border border-white/10 hover:border-white/20 text-neutral-300 text-xs font-mono active:scale-95"
+              title="View Card"
+            >
+              Card
+            </button>
+          </div>
         </motion.div>
 
         {/* Made with ❤️ */}

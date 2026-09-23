@@ -23,6 +23,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInstagram }) => {
     { label: 'Collage', href: '#photo-wall-section', icon: Grid },
   ];
 
+  const instagramUrl = 'https://www.instagram.com/_kalyan_setty_?stkn=MXZ1OXVjaWVzbHNnNw==';
+
   return (
     <header className="fixed top-4 inset-x-0 z-40 flex justify-center px-4 pointer-events-none">
       <nav
@@ -56,15 +58,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInstagram }) => {
           })}
         </div>
 
-        {/* Instagram Icon Button in Navbar */}
-        <button
-          onClick={onOpenInstagram}
-          title="Open Instagram Profile"
+        {/* Direct Instagram Link Button in Navbar */}
+        <a
+          href={instagramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Open Kalyan's Instagram Profile"
           className="ml-1 sm:ml-2 flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white text-[11px] sm:text-xs font-mono font-medium shadow-md hover:brightness-110 active:scale-95 transition-all"
         >
           <Instagram className="w-3.5 h-3.5" />
           <span className="hidden sm:inline">Instagram</span>
-        </button>
+        </a>
       </nav>
     </header>
   );
